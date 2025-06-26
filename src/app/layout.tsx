@@ -5,6 +5,8 @@ import ThreeBackground from "@/components/ThreeBackground";
 import DockMenu from "@/components/dockmenu/DockMenu";
 import QueryProvider from "@/components/context/QueryProvider";
 import { TerminalProvider } from '@/components/context/TerminalContext';
+import { Analytics } from "@vercel/analytics/next";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inconsolata = Inconsolata({
   variable: "--font-inconsolata",
@@ -22,6 +24,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" style={{ background: "#5a13a5" }}>
+      <Analytics />
+      <GoogleAnalytics gaId="G-7M0CXZXJZ8" />
       <body
         className={`${inconsolata.variable} antialiased`}
       >
